@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+    <h1>Student Data</h1>
+    {% if stu %}
+    <table border="2px" solid>
+      <thead>Student Data</thead>
+      <th>name</th>
+      <th>email</th>
+      <th>phno</th>
+      <th>marks</th>
+      {% for st in stu %}
+      <tr>
+        <td>{{ st.first_name|title }} {{st.last_name|upper}}</td>
+        <td>{{ st.email|title }}</td>
+        <td>{{ st.phno }}</td>
+        <td>{{ st.marks }}</td>
+      </tr>
+      {% endfor%}
+    </table>
+    {% endif %}
+{% endblock %}
